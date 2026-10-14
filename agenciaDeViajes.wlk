@@ -21,6 +21,7 @@ class PacksInternacionales inherits Packs{
     var property cantEscalas
     var property esLugarDeInteres
     override method valorFinal() =  super() * 0.2
+    override method esPremium(){((self.paisDestino().esLugarDeInteres()) and (self.dias() > 20) and (self.cantEscalas() == 0))}
 }
 
 class Coordinador{
