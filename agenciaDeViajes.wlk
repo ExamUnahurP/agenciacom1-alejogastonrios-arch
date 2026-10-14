@@ -8,13 +8,13 @@ class Packs{
     method sumaValorBeneficios(){return self.beneficiosEspeciales().sum({b => b.costo()})}
 }
 
-class PacksNacionales{
+class PacksNacionales inherits Packs{
     var property provinciaDestino
     const actsIncluidas = []
     method actsIncluidas() =  actsIncluidas
 }
 
-class PacksInternacionales{
+class PacksInternacionales inherits Packs{
     var property paisDestino
     var property cantEscalas
     var property esLugarDeInteres
