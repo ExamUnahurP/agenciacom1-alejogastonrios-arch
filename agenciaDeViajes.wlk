@@ -48,8 +48,12 @@ class BeneficiosEspeciales{
     method costo() = tipo.costo()
 }
 
-object trasladosVip{
-    var estaVigente = true 
-    method costo() = 300
-    method estaVigente() = estaVigente
+class TrasladosVip inherits BeneficiosEspeciales{
+    var costo = 300
+    var estaVigente = true
+}
+
+class AccesoASalasVIP inherits BeneficiosEspeciales{
+    var costo = 400
+    
 }
