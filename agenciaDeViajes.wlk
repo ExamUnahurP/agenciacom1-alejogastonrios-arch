@@ -40,6 +40,8 @@ class Guia inherits Coordinador{
     override method cumpleSuRol(){self.estaMotivado}
 }
 
+class Asistenb
+
 class BeneficiosEspeciales{
     var property tipo
     method costo() = tipo.costo()
@@ -49,4 +51,3 @@ object trasladosVip{
     var estaVigente = true 
     method costo() = 300
     method estaVigente() = estaVigente
-}
