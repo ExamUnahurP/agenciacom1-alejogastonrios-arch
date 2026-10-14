@@ -1,24 +1,26 @@
 class Packs{
     var property dias
     var property precioBase
+    var property coordiACargo
     const property beneficiosEspeciales = []
-    const property coordiACargo = []
     method coordiACargo() = coordiACargo
     method valorFinal() = self.precioBase() + self.sumaValorBeneficios()
     method sumaValorBeneficios(){return self.beneficiosEspeciales().sum({b => b.costo()})}
+    method esPremium()
 }
 
 class PacksNacionales inherits Packs{
     var property provinciaDestino
     const actsIncluidas = []
     method actsIncluidas() =  actsIncluidas
+    override method esPremium(){((self.dias() > 10) and (self.coordiACargo().altamenteCalificado()))}
 }
 
 class PacksInternacionales inherits Packs{
     var property paisDestino
     var property cantEscalas
     var property esLugarDeInteres
-    override method valorFinal() = (self.precioBase() + sumaValorBeneficios() * 0.2)
+    override method valorFinal() =  super() * 0.2
 }
 
 class Coordinador{
