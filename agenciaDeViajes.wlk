@@ -1,6 +1,6 @@
 class PacksNacionales{
     var dias
-    var provianciaDestino
+    var provinciaDestino
     var precioBase
     const beneficiosEspeciales = []
     const coordiACargo = []
