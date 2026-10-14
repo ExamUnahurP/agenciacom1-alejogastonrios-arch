@@ -1,29 +1,24 @@
-class PacksNacionales{
+class Packs{
     var property dias
-    var property provinciaDestino
     var property precioBase
-    const beneficiosEspeciales = []
-    const coordiACargo = []
-    const actsIncluidas = []
-    method beneficiosEspeciales() = beneficiosEspeciales
+    const property beneficiosEspeciales = []
+    const property coordiACargo = []
     method coordiACargo() = coordiACargo
-    method actsIncluidas() =  actsIncluidas
     method valorFinal() = self.precioBase() + self.sumaValorBeneficios()
     method sumaValorBeneficios(){return self.beneficiosEspeciales().sum({b => b.costo()})}
 }
 
+class PacksNacionales{
+    var property provinciaDestino
+    const actsIncluidas = []
+    method actsIncluidas() =  actsIncluidas
+}
+
 class PacksInternacionales{
-    var property dias
-    var property precioBase
     var property paisDestino
     var property cantEscalas
     var property esLugarDeInteres
-    const beneficiosEspeciales = []
-    const coordiACargo = []
-    method beneficiosEspeciales() = beneficiosEspeciales
-    method coordiACargo() = coordiACargo
-    method valorFinal() = (self.precioBase() + sumaValorBeneficios() * 0.2)
-    method sumaValorBeneficios(){return beneficiosEspeciales().sum({b => b.costo})}
+    override method valorFinal() = (self.precioBase() + sumaValorBeneficios() * 0.2)
 }
 
 class Coordinador{
@@ -40,7 +35,13 @@ class Guia inherits Coordinador{
     override method cumpleSuRol(){self.estaMotivado}
 }
 
-class Asistenb
+class AsistenteLogistico inherits Coordinador{
+    override method cumpleSuRol(){self.añosDeExperiencia() > 3}
+}
+
+class Acompañante inherits Coordinador{
+    override method cumpleSuRol() {}
+}
 
 class BeneficiosEspeciales{
     var property tipo
@@ -51,3 +52,4 @@ object trasladosVip{
     var estaVigente = true 
     method costo() = 300
     method estaVigente() = estaVigente
+}
