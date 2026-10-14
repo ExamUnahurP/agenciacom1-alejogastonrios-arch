@@ -16,6 +16,11 @@ class PacksNacionales inherits Packs{
     override method esPremium(){((self.dias() > 10) and (self.coordiACargo().altamenteCalificado()))}
 }
 
+class PacksProvinciales inherits PacksNacionales{
+    var cantCiudadesAVisitar
+    override method esPremium(){((self.actsIncluidas() >= 4) )}
+}
+
 class PacksInternacionales inherits Packs{
     var property paisDestino
     var property cantEscalas
