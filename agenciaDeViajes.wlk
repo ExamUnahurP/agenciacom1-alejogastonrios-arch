@@ -17,8 +17,9 @@ class PacksNacionales inherits Packs{
 }
 
 class PacksProvinciales inherits PacksNacionales{
-    var cantCiudadesAVisitar
-    override method esPremium(){((self.actsIncluidas() >= 4) )}
+    var property cantCiudadesAVisitar
+    override method esPremium(){((self.actsIncluidas() >= 4) and (self.cantCiudadesAVisitar() > 5) and self.beneficiosEspeciales() > 3)}
+    override method valorFinal(){if (self.esPremium8) super() * 0.5}
 }
 
 class PacksInternacionales inherits Packs{
