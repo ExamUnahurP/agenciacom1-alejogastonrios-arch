@@ -55,5 +55,10 @@ class TrasladosVip inherits BeneficiosEspeciales{
 
 class AccesoASalasVIP inherits BeneficiosEspeciales{
     var costo = 400
-    
+    var estaVigente = true
+}
+
+class SegurosAdicionales inherits BeneficiosEspeciales{
+    var costo = 500
+    var estaVigente = false
 }
