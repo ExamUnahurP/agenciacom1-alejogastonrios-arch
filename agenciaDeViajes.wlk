@@ -1,13 +1,10 @@
 class PacksNacionales{
-    var dias
-    var provinciaDestino
-    var precioBase
+    var property dias
+    var property provinciaDestino
+    var property precioBase
     const beneficiosEspeciales = []
     const coordiACargo = []
     const actsIncluidas = []
-    method dias() = dias
-    method precioBase() = precioBase
-    method provianciaDestino() = provianciaDestino
     method beneficiosEspeciales() = beneficiosEspeciales
     method coordiACargo() = coordiACargo
     method actsIncluidas() =  actsIncluidas
@@ -16,18 +13,13 @@ class PacksNacionales{
 }
 
 class PacksInternacionales{
-    var dias
-    var precioBase
-    var paisDestino
-    var cantEscalas
-    var esLugarDeInteres
+    var property dias
+    var property precioBase
+    var property paisDestino
+    var property cantEscalas
+    var property esLugarDeInteres
     const beneficiosEspeciales = []
     const coordiACargo = []
-    method esLugarDeInteres() = esLugarDeInteres
-    method dias() = dias
-    method precioBase() = precioBase
-    method paisDestino() = paisDestino
-    method cantEscalas() = cantEscalas
     method beneficiosEspeciales() = beneficiosEspeciales
     method coordiACargo() = coordiACargo
     method valorFinal() = (self.precioBase() + sumaValorBeneficios() * 0.2)
@@ -35,27 +27,20 @@ class PacksInternacionales{
 }
 
 class Coordinador{
-    var cantViajesRealizados
-    var estaMotivado
-    var añosDeExperiencia
-    var rol
-    method cantViajesRealizados() = cantViajesRealizados
-    method estaMotivado() = estaMotivado
-    method añosDeExperiencia() = añosDeExperiencia
-    method rol() = rol
+    var property cantViajesRealizados
+    var property estaMotivado
+    var property añosDeExperiencia
+    var property rol
     method cambiarRol(nuevoRol){rol = nuevoRol}
 }
 
 class BeneficiosEspeciales{
-    var costo
-    var estaVigente
-    const tipo = []
-    method tipo() = tipo
-    method costo() = costo
-    method estaVigente() = estaVigente
+    var property tipo
+    method costo() = tipo.costo()
 }
 
-object pepita{
-    var poder = 20
-    method poder() = 20
+object trasladosVip{
+    var estaVigente = true 
+    method costo() = 300
+    method estaVigente() = estaVigente
 }
