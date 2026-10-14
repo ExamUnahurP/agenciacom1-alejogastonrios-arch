@@ -1,3 +1,5 @@
+import agenciaDeViajes.*
+
 describe "Calcular el valor final de un pack"{
     const viaje1 = new PacksNacionales(dias = 2, provianciaDestino = "Jujuy", precioBase = 250)
 
