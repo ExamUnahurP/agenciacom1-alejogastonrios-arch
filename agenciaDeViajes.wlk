@@ -32,6 +32,12 @@ class Coordinador{
     var property añosDeExperiencia
     var property rol
     method cambiarRol(nuevoRol){rol = nuevoRol}
+    method altamenteCalificado(){return (self.cantViajesRealizados() > 20 and self.cumpleSuRol())}
+    method cumpleSuRol()
+}
+
+class Guia inherits Coordinador{
+    override method cumpleSuRol(){self.estaMotivado}
 }
 
 class BeneficiosEspeciales{
