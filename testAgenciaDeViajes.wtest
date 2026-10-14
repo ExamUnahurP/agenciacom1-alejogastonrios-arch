@@ -1,5 +1,5 @@
 describe "Calcular el valor final de un pack"{
-    const viaje1 = new PacksNacionales(precioBase = 250)
+    const viaje1 = new PacksNacionales(dias = 2, provianciaDestino = "Jujuy", precioBase = 250)
 
     test "Un pack nacional sin beneficios vogentes devuelve el mismo precio"{
         assert.equals(250, viaje1.valorFinal())
