@@ -8,8 +8,8 @@ class PacksNacionales{
     method beneficiosEspeciales() = beneficiosEspeciales
     method coordiACargo() = coordiACargo
     method actsIncluidas() =  actsIncluidas
-    method valorFinal() = self.precioBase() + sumaValorBeneficios()
-    method sumaValorBeneficios(){return beneficiosEspeciales().sum({b => b.costo()})}
+    method valorFinal() = self.precioBase() + self.sumaValorBeneficios()
+    method sumaValorBeneficios(){return self.beneficiosEspeciales().sum({b => b.costo()})}
 }
 
 class PacksInternacionales{
